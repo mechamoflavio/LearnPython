@@ -17,20 +17,23 @@ numero_aleatorio = random.randint(1, 100)
 try_count = 7 # Condição 2
 
 while try_count > 0: # Condição 3
-    in_numero = int(input("Digite um numero: "))
+    try: # verifica validade do input
+        in_numero = int(input("Digite um numero: "))
+    except ValueError:
+        print("Erro: Digite apenas números inteiros!")
+        exit()
     if in_numero == numero_aleatorio:
-        print("Parabéns, você acertou o numero.")
+        print("!!! Parabéns, você acertou o numero. !!!")
         break
-    else:
+
+    elif try_count > 1:
         try_count -= 1
         print("Que pena, você errou dessa vez.")
         print(f"Te restam {try_count} chance(s).")
-
-#except ValueError:
-#    print("Erro: Digite apenas números inteiros!")
-#    exit()
-
-# Debugging
-print(f"numero_aleatorio = {numero_aleatorio}")
-print(f"tentativas = {try_count}")
-print(f"numero digitado = {in_numero}")
+        if in_numero > numero_aleatorio:
+            print("Dica: que tal tentar um número menor?")
+        else: print("Dica: que tal tentar um número maior?")
+    else:
+        print("Não foi dessa vez, mas você chegou perto.")
+        print("Que tal tentar de novo? Experimente seguir a dica.")
+        break
