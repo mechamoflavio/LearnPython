@@ -6,3 +6,15 @@
 ###### # Dica:
 ###### #   import random
 ###### #   numero_secreto = random.randint(1, 100)
+
+# Boas vindas ao jogo
+print("Bem vindo ao jogo de adivinhação!")
+print("Você terá 7 chances de acertar um numero aleatorio de 1 a 100")
+print("Será que você consegue?")
+
+# Condição 1
+import random
+numero_aleatorio = random.randint(1, 100)
+
+# Debugging
+print(f"numero_aleatorio = {numero_aleatorio}")
