@@ -1,8 +1,19 @@
-import random
+###### Crie um jogo onde:
+###### 1. O computador sorteia um número entre 1-100
+###### 2. O usuário tem 7 tentativas para adivinhar
+###### 3. A cada tentativa, o programa diz se o número é maior ou menor
+###### 4. Ao acertar ou esgotar tentativas, mostra mensagem apropriada
+###### # Dica:
+###### #   import random
+###### #   numero_secreto = random.randint(1, 100)
+
+# Versão final após correções e sugestões da IA
 
 print("=== Jogo de Adivinhação ===")
 print("Tente adivinhar o número entre 1 e 100. Você tem 7 tentativas!")
 
+# Configurações
+import random
 numero_secreto = random.randint(1, 100)
 tentativas_restantes = 7
 
