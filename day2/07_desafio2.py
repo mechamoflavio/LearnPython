@@ -7,14 +7,21 @@
 ###### #   import random
 ###### #   numero_secreto = random.randint(1, 100)
 
-# Boas vindas ao jogo
-print("Bem vindo ao jogo de adivinhação!")
+print("Bem vindo ao jogo de adivinhação!")  # Boas vindas ao jogo
 print("Você terá 7 chances de acertar um numero aleatorio de 1 a 100")
 print("Será que você consegue?")
 
-# Condição 1
-import random
+import random   # Condição 1
 numero_aleatorio = random.randint(1, 100)
+
+tentativas = 7  # Condição 2
+
+try: # verificação se dados de entrada é valido
+    in_numero = int(input("Digite um numero de 1 a 100: "))
+except ValueError: # em caso de erro na entrada de dados
+    print("Erro: Digite apenas números inteiros!")
+    exit()
 
 # Debugging
 print(f"numero_aleatorio = {numero_aleatorio}")
+print(f"numero digitado = {in_numero}")
