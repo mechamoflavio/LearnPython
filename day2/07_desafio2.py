@@ -1,39 +1,40 @@
-###### Crie um jogo onde:
-###### 1. O computador sorteia um número entre 1-100
-###### 2. O usuário tem 7 tentativas para adivinhar
-###### 3. A cada tentativa, o programa diz se o número é maior ou menor
-###### 4. Ao acertar ou esgotar tentativas, mostra mensagem apropriada
-###### # Dica:
-###### #   import random
-###### #   numero_secreto = random.randint(1, 100)
+import random
 
-# Boas vindas ao jogo
-print("Bem vindo ao jogo de adivinhação!")
-print("Advinhe um número aleatório de 1 a 100.")
+print("=== Jogo de Adivinhação ===")
+print("Tente adivinhar o número entre 1 e 100. Você tem 7 tentativas!")
 
-# Configurações
-import random # Condição 1
-numero_aleatorio = random.randint(1, 100)
-try_count = 7 # Condição 2
+numero_secreto = random.randint(1, 100)
+tentativas_restantes = 7
 
-while try_count > 0: # Condição 3
-    try: # verifica validade do input
-        in_numero = int(input("Digite um numero: "))
+while tentativas_restantes > 0:
+    print(f"\nTentativas restantes: {tentativas_restantes}")
+
+    try:
+        palpite = int(input("Digite seu palpite: "))
+
+        # Validação do intervalo
+        if palpite < 1 or palpite > 100:
+            print("Por favor, digite um número entre 1 e 100!")
+            continue
+
     except ValueError:
         print("Erro: Digite apenas números inteiros!")
-        exit()
-    if in_numero == numero_aleatorio:
-        print("!!! Parabéns, você acertou o numero. !!!")
+        continue
+
+    # Verificação do palpite
+    if palpite == numero_secreto:
+        print(f"🎉 Parabéns! Você acertou em {8 - tentativas_restantes} tentativas!")
         break
 
-    elif try_count > 1:
-        try_count -= 1
-        print("Que pena, você errou dessa vez.")
-        print(f"Te restam {try_count} chance(s).")
-        if in_numero > numero_aleatorio:
-            print("Dica: que tal tentar um número menor?")
-        else: print("Dica: que tal tentar um número maior?")
+    tentativas_restantes -= 1
+
+    # Feedback e dicas
+    if palpite > numero_secreto:
+        print("Dica: Tente um número MENOR")
     else:
-        print("Não foi dessa vez, mas você chegou perto.")
-        print("Que tal tentar de novo? Experimente seguir a dica.")
-        break
+        print("Dica: Tente um número MAIOR")
+
+    # Mensagem final se acabarem as tentativas
+    if tentativas_restantes == 0:
+        print(f"\n😢 Fim de jogo! O número era {numero_secreto}.")
+        print("Tente novamente - você consegue!")
