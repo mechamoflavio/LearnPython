@@ -19,7 +19,6 @@ tentativas_restantes = 7
 
 while tentativas_restantes > 0:
     print(f"\nTentativas restantes: {tentativas_restantes}")
-
     try:
         palpite = int(input("Digite seu palpite: "))
 
