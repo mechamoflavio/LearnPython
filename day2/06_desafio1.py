@@ -17,8 +17,17 @@
 print("Bem vindo ao meu primeiro programa de calculo de IMC")
 
 # Coleta de dados # condição 1
-in_peso = float(input("Qual seu peso? "))
-in_altura = float(input("Qual sua altura? "))
+try:    # sugestão de correção está utilizando try pra verificação de entrada de dados
+    in_peso = float(input("Qual seu peso? "))
+    in_altura = float(input("Qual sua altura? "))
+
+    if in_peso <= 0 or in_altura <= 0:
+        print("Erro: Valores devem ser positivos!")
+        exit()
+
+except ValueError:
+    print("Erro: Digite apenas números!")
+    exit()
 
 # Calculando o IMC # condição 2
 imc = in_peso / (in_altura * in_altura)
@@ -34,4 +43,5 @@ else:
     tipo_corpo = "Obesidade"
 
 # Resultado # condição 4
-print(f"Considerando sua altura ({in_altura}) e seu peso ({in_peso}), atualmente seu imc é de ({imc}). Esse resultado é considerado como ({tipo_corpo}).")
+# sugestão de correção: Formatar IMC com 2 casas decimais
+print(f"Considerando sua altura ({in_altura:.2f}) e seu peso ({in_peso:.1f}), atualmente seu IMC é de {imc:.1f}. Esse resultado é considerado como {tipo_corpo}.")
