@@ -8,19 +8,16 @@
 # Exemplo de saída:
 # "Soma: 15, Subtração: 5, Multiplicação: 50, Divisão: 2.0"
 
-#1
 
 primeiro_numero = int(input("Olá, diga 1 numero inteiro: "))
 segundo_numero = int(input("agora diga um 2 numero inteiro: "))
 
-#2
 
 soma = primeiro_numero + segundo_numero
 subtração = primeiro_numero - segundo_numero
 multiplicação = primeiro_numero * segundo_numero
 divisão = primeiro_numero / segundo_numero
 
-#3
 
 print(f"Aqui estão os resultados para os numeros {primeiro_numero} e {segundo_numero}")
 print(f"{primeiro_numero}+{segundo_numero}={soma}")

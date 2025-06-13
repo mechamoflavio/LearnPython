@@ -10,6 +10,7 @@
 # Exemplo:
 # "25°C = 77.0°F"
 
+
 temperatura = int(input("Qual a temperatura em Celsius? "))
 convertido = (temperatura*9/5)+32
 print(f"O valor de {temperatura} em Celsius convertido para Fahrenheit fica igual a {convertido}")
