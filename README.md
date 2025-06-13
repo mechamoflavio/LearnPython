@@ -1,1 +1,1 @@
-Aprendendo Python utilizando um programa de aprendizado gerado por IA.
+Aprendendo Python utilizando acompanhamento de aprendizado gerado por IA.
