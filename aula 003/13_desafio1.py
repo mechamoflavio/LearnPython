@@ -18,12 +18,12 @@ biblioteca = { # condição 1: dicionario
         {"titulo": "Call of Duty: Mobile", "ano": 2019, "plataforma": "Mobile"}
         ],
     "RPG": [
-        {"titulo": "", "ano":, "plataforma": ""},
-        {"titulo": "", "ano":, "plataforma": ""},
-        {"titulo": "", "ano":, "plataforma": ""}
+        {"titulo": "World of Warcraft", "ano": 2004, "plataforma": "PC"},
+        {"titulo": "Priston Tale", "ano": 2001, "plataforma": "PC"},
+        {"titulo": "Brawl Stars", "ano": 2017, "plataforma": "Mobile"}
         ],
     "Corrida": [
-        {"titulo": "", "ano":, "plataforma": ""},
-        {"titulo": "", "ano":, "plataforma": ""}
+        {"titulo": "Need for Speed: Underground", "ano": 2003, "plataforma": "PC"},
+        {"titulo": "Real Racing 3", "ano": 2013, "plataforma": "Mobile"}
         ]
     }
