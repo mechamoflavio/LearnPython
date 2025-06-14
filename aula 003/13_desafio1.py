@@ -13,16 +13,16 @@
 
 # database inicial
 biblioteca = { # condição 1: dicionario
-    "tiro/fps": [ # condição 2: genero e lista
+    "Tiro/FPS": [ # condição 2: genero e lista
         {"titulo": "Counter-Strike", "ano": 1999, "plataforma": "PC"}, # condição 3: titulo, ano, plataforma
         {"titulo": "Call of Duty: Mobile", "ano": 2019, "plataforma": "Mobile"}
         ],
-    "": [
+    "RPG": [
         {"titulo": "", "ano":, "plataforma": ""},
         {"titulo": "", "ano":, "plataforma": ""},
         {"titulo": "", "ano":, "plataforma": ""}
         ],
-    "": [
+    "Corrida": [
         {"titulo": "", "ano":, "plataforma": ""},
         {"titulo": "", "ano":, "plataforma": ""}
         ]
