@@ -55,4 +55,3 @@ def add_jogo():
 #def listar_jogos():
 
 # debugging
-print(db_jogos["plataforma"])
