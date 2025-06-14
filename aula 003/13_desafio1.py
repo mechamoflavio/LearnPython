@@ -5,10 +5,10 @@
 ###### 2. Cada gênero contém uma lista de jogos                         ok
 ###### 3. Cada jogo é um dicionário com: título, ano, plataforma        ok
 ###### 4. Implemente funções para:
-######    - Adicionar jogo
-######    - Listar jogos por plataforma
-######    - Buscar jogos por título
-######    - Mostrar estatísticas (total de jogos, jogos por gênero)
+######    - Adicionar jogo                                              implementando
+######    - Listar jogos por plataforma                                 aguardando
+######    - Buscar jogos por título                                     aguardando
+######    - Mostrar estatísticas (total de jogos, jogos por gênero)     aguardando
 ######
 
 # database inicial de jogos
@@ -30,13 +30,10 @@ db_jogos = { # condição 1: dicionario
 
 # função adicionar jogo
 def add_jogo():
-    genero = input("Gênero do jogo: ").lower()
-
+    genero = input("Gênero do jogo: ").lower() # coleta dados (genero, titulo, plataforma, ano)
     titulo = input("Titulo: ")
     plataforma = input("Plataforma: ")
-
-    try:
-        ano = int(input("Ano de lançamento: "))
+    try: ano = int(input("Ano de lançamento: "))
     except ValueError:
         print("Ano invalido! Use apenas numeros.")
         return
@@ -45,4 +42,3 @@ def add_jogo():
 
     if genero not in db_jogos:
         db_jogos[genero] = []
-
