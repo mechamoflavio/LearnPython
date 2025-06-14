@@ -40,5 +40,13 @@ def add_jogo():
 
     novo_jogo = (titulo, plataforma, ano) # tupla de dados
 
-    if genero not in db_jogos:
+    if genero not in db_jogos: # verifica genero na database e cria se não existir
         db_jogos[genero] = []
+
+    db_jogos[genero].append({ # adiciona os dados coletados
+        "titulo": titulo,
+        "plataforma": plataforma,
+        "ano": ano
+        })
+
+    print(f"Jogo '{titulo}' adicionado com sucesso no genero {genero}!")
