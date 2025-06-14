@@ -54,6 +54,7 @@ def add_jogo():
 # condição 4.2: função listar jogos por plataforma
 #def listar_jogos():
 
+########
 # debugging
 
 # Extrair TODAS as plataformas (incluindo repetições)
