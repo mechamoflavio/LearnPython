@@ -52,3 +52,7 @@ def add_jogo():
     print(f"Jogo '{titulo}' adicionado com sucesso no genero {genero}!")
 
 # condição 4.2: função listar jogos por plataforma
+#def listar_jogos():
+
+# debugging
+print(db_jogos["plataforma"])
