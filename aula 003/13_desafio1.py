@@ -55,3 +55,19 @@ def add_jogo():
 #def listar_jogos():
 
 # debugging
+
+# Extrair TODAS as plataformas (incluindo repetições)
+list_platf = [jogo["plataforma"]
+              for lista_jogos in db_jogos.values()  # Itera nas listas de jogos
+              for jogo in lista_jogos]              # Itera nos jogos de cada lista
+
+print(list_platf)
+# Saída: ['PC', 'Mobile', 'PC', 'PC', 'Mobile', 'PC', 'Mobile']
+
+# Usando set() para valores únicos
+platf_unicas = set(jogo["plataforma"]
+                   for lista_jogos in db_jogos.values()
+                   for jogo in lista_jogos)
+
+print(platf_unicas)
+# Saída: {'PC', 'Mobile'}
