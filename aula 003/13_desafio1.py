@@ -11,10 +11,19 @@
 ######    - Mostrar estatísticas (total de jogos, jogos por gênero)
 ######
 
-# db inicial
-biblioteca = { # condição 1 do desafio
-    "tiro/fps": [ # condição 2 do desafio
-        {"titulo": "Counter-Strike", "ano": 1999, "plataforma": "PC"}, # condição 3 do desafio
+# database inicial
+biblioteca = { # condição 1: dicionario
+    "tiro/fps": [ # condição 2: genero e lista
+        {"titulo": "Counter-Strike", "ano": 1999, "plataforma": "PC"}, # condição 3: titulo, ano, plataforma
         {"titulo": "Call of Duty: Mobile", "ano": 2019, "plataforma": "Mobile"}
         ],
+    "": [
+        {"titulo": "", "ano":, "plataforma": ""},
+        {"titulo": "", "ano":, "plataforma": ""},
+        {"titulo": "", "ano":, "plataforma": ""}
+        ],
+    "": [
+        {"titulo": "", "ano":, "plataforma": ""},
+        {"titulo": "", "ano":, "plataforma": ""}
+        ]
     }
