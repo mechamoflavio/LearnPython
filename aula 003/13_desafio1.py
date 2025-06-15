@@ -64,8 +64,8 @@ def f_listar_platf():
 
 # Usando set() para valores únicos
 platf_unicas = set(jogo["plataforma"]
-                   for lista_jogos in db_jogos.values()
-                   for jogo in lista_jogos)
+                   for lista_jogos in db_jogos.values() # Itera nas listas de jogos
+                   for jogo in lista_jogos)             # Itera nos jogos de cada lista
 print(platf_unicas) # Saída: {'PC', 'Mobile'}
 
 # Extrair TODAS as plataformas (incluindo repetições)
