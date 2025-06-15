@@ -6,8 +6,8 @@
 ###### 3. Cada jogo é um dicionário com: título, ano, plataforma        ok
 ###### 4. Implemente funções para:
 ######    - Adicionar jogo                                              ok
-######    - Listar jogos por plataforma                                 iniciado
-######    - Buscar jogos por título                                     aguardando
+######    - Listar jogos por plataforma                                 ok
+######    - Buscar jogos por título                                     iniciado
 ######    - Mostrar estatísticas (total de jogos, jogos por gênero)     aguardando
 ######
 
@@ -56,7 +56,10 @@ def f_listar_platf():
     platf_unicas = set(jogo["plataforma"]
                        for lista_jogos in db_jogos.values()
                        for jogo in lista_jogos)
-    print(platf_unicas) # conceito está errado, preciso trabalhar a leitura dos dados coletados (não é possivel com set)
+    print(f"\nPlataformas cadastradas: {platf_unicas}")
+
+# condição 4.3: função buscar jogos por titulo
+def f_buscar_titulo():
 
 ###################################
 ###### debugging ##################
@@ -66,7 +69,7 @@ def f_listar_platf():
 platf_unicas = set(jogo["plataforma"]
                    for lista_jogos in db_jogos.values() # Itera nas listas de jogos
                    for jogo in lista_jogos)             # Itera nos jogos de cada lista
-print(platf_unicas) # Saída: {'PC', 'Mobile'}
+print(f"\nPlataformas cadastradas: {platf_unicas}") # Saída: {'PC', 'Mobile'}
 
 # Extrair TODAS as plataformas (incluindo repetições)
 list_platf = [jogo["plataforma"]
