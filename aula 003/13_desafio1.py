@@ -32,24 +32,24 @@ db_jogos = { # condição 1: dicionario
 def f_add_jogo():
     genero = input("Gênero do jogo: ").lower() # coleta dados (genero, titulo, plataforma, ano)
     titulo = input("Titulo: ")
-    plataforma = input("Plataforma: ")
     try: ano = int(input("Ano de lançamento: "))
     except ValueError:
         print("Ano invalido! Use apenas numeros.")
         return
+    plataforma = input("Plataforma: ")
 
-    novo_jogo = (titulo, plataforma, ano) # tupla de dados
+    novo_jogo = (titulo, ano, plataforma) # tupla de dados
 
     if genero not in db_jogos: # verifica genero na database e cria se não existir
         db_jogos[genero] = []
 
     db_jogos[genero].append({ # adiciona os dados coletados
         "titulo": titulo,
-        "plataforma": plataforma,
-        "ano": ano
+        "ano": ano,
+        "plataforma": plataforma
         })
 
-    print(f"Jogo '{titulo}' adicionado com sucesso no genero {genero}!")
+    print(f"Jogo '{titulo}' adicionado com sucesso no genero {genero}! \nAno: {ano} ~ Plataforma: {plataforma}")
 
 # condição 4.2: função listar jogos por plataforma
 def f_listar_platf():
@@ -59,10 +59,22 @@ def f_listar_platf():
     print(f"\nPlataformas cadastradas: {platf_unicas}")
 
 # condição 4.3: função buscar jogos por titulo ou categoria
-def f_buscar_titulo():
-    buscar = input("\nBuscar por 'titulo' ou 'plataforma': ").lower()
+def f_buscar_jogo():
+    termo = input("\nBuscar por 'jogo' ou 'plataforma': ").lower()
     resultados = []
-    for plataforma, titulo in db_jogos.items():
+    for plataforma, jogos in db_jogos.items():
+        if termo in plataforma:
+            resultados.extend(jogos)
+        for jogo in jogos:
+            if termo in jogo["titulo"].lower():
+                resultados.append(jogo)
+    jogos_unicos = {jogo["titulo"]: jogo for jogo in resultados}.values() # remove resultados duplicados
+    if not jogos_unicos:
+        print("Nenhum jogo encontrado.")
+        return
+    print("\nResultados da busca:")
+    for jogo in jogos_unicos:
+        print(f"- {jogo['titulo]']} ({jogo['ano']}, {jogo['plataforma']})")
 
 ###################################
 ###### debugging ##################
