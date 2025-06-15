@@ -76,20 +76,39 @@ def f_buscar_jogo():
     for jogo in jogos_unicos:
         print(f"- {jogo['titulo]']} ({jogo['ano']}, {jogo['plataforma']})")
 
-# condição 4.4: estatísticas (total jogos e jogos por genero) e frontend
+# condição 4.4: estatísticas (total jogos e jogos por genero)
+def main():
+    while True:
+        print("\n=== BIBLIOTECA DE JOGOS ===")
+        print("1. Adicionar jogo")
+        print("2. Pesquisar jogo")
+        print("3. Sair")
+        opcao = input("\nEscolha uma opção: ")
+        if opcao == "1":
+            f_add_jogo()
+        elif opcao == "2":
+            f_buscar_jogo()
+        elif opcao == "3":
+            print("Encerrando..")
+            break
+        else:
+            print("Opção invalida. Tente novamente.")
+            return
+    if __name__ == "__main__":
+        main()
 
 ###################################
 ###### debugging ##################
 ###################################
 
 # Usando set() para valores únicos
-platf_unicas = set(jogo["plataforma"]
-                   for lista_jogos in db_jogos.values() # Itera nas listas de jogos
-                   for jogo in lista_jogos)             # Itera nos jogos de cada lista
-print(f"\nPlataformas cadastradas: {platf_unicas}") # Saída: Plataformas cadastradas: {'Mobile', 'PC'}
+#platf_unicas = set(jogo["plataforma"]
+#                   for lista_jogos in db_jogos.values() # Itera nas listas de jogos
+#                   for jogo in lista_jogos)             # Itera nos jogos de cada lista
+#print(f"\nPlataformas cadastradas: {platf_unicas}") # Saída: Plataformas cadastradas: {'Mobile', 'PC'}
 
 # Extrair TODAS as plataformas (incluindo repetições)
-list_platf = [jogo["plataforma"]
-              for lista_jogos in db_jogos.values()  # Itera nas listas de jogos
-              for jogo in lista_jogos]              # Itera nos jogos de cada lista
-print(list_platf) # Saída: ['PC', 'Mobile', 'PC', 'PC', 'Mobile', 'PC', 'Mobile']
+#list_platf = [jogo["plataforma"]
+#              for lista_jogos in db_jogos.values()  # Itera nas listas de jogos
+#              for jogo in lista_jogos]              # Itera nos jogos de cada lista
+#print(list_platf) # Saída: ['PC', 'Mobile', 'PC', 'PC', 'Mobile', 'PC', 'Mobile']
