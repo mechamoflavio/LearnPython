@@ -86,7 +86,7 @@ def f_buscar_jogo():
 platf_unicas = set(jogo["plataforma"]
                    for lista_jogos in db_jogos.values() # Itera nas listas de jogos
                    for jogo in lista_jogos)             # Itera nos jogos de cada lista
-print(f"\nPlataformas cadastradas: {platf_unicas}") # Saída: {'PC', 'Mobile'}
+print(f"\nPlataformas cadastradas: {platf_unicas}") # Saída: Plataformas cadastradas: {'Mobile', 'PC'}
 
 # Extrair TODAS as plataformas (incluindo repetições)
 list_platf = [jogo["plataforma"]
