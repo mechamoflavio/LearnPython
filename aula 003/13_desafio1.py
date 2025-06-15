@@ -58,8 +58,11 @@ def f_listar_platf():
                        for jogo in lista_jogos)
     print(f"\nPlataformas cadastradas: {platf_unicas}")
 
-# condição 4.3: função buscar jogos por titulo
+# condição 4.3: função buscar jogos por titulo ou categoria
 def f_buscar_titulo():
+    buscar = input("\nBuscar por 'titulo' ou 'plataforma': ").lower()
+    resultados = []
+    for plataforma, titulo in db_jogos.items():
 
 ###################################
 ###### debugging ##################
