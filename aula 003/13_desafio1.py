@@ -8,7 +8,7 @@
 ######    - Adicionar jogo                                              ok (need testing)
 ######    - Listar jogos por plataforma                                 ok (need testing)
 ######    - Buscar jogos por título                                     ok (need testing)
-######    - Mostrar estatísticas (total de jogos, jogos por gênero)     iniciado
+######    - Mostrar estatísticas (total de jogos, jogos por gênero)     ok (need testing)
 ######
 
 # database inicial de jogos
@@ -94,21 +94,5 @@ def main():
         else:
             print("Opção invalida. Tente novamente.")
             return
-    if __name__ == "__main__":
-        main()
 
-###################################
-###### debugging ##################
-###################################
-
-# Usando set() para valores únicos
-#platf_unicas = set(jogo["plataforma"]
-#                   for lista_jogos in db_jogos.values() # Itera nas listas de jogos
-#                   for jogo in lista_jogos)             # Itera nos jogos de cada lista
-#print(f"\nPlataformas cadastradas: {platf_unicas}") # Saída: Plataformas cadastradas: {'Mobile', 'PC'}
-
-# Extrair TODAS as plataformas (incluindo repetições)
-#list_platf = [jogo["plataforma"]
-#              for lista_jogos in db_jogos.values()  # Itera nas listas de jogos
-#              for jogo in lista_jogos]              # Itera nos jogos de cada lista
-#print(list_platf) # Saída: ['PC', 'Mobile', 'PC', 'PC', 'Mobile', 'PC', 'Mobile']
+if __name__ == "__main__": main()
