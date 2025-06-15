@@ -1,14 +1,14 @@
 ###### Desafio1.py
 ######
 ###### Crie um sistema para gerenciar sua coleção de jogos:
-###### 1. Use dicionário com gêneros como chaves                        ok
-###### 2. Cada gênero contém uma lista de jogos                         ok
-###### 3. Cada jogo é um dicionário com: título, ano, plataforma        ok
+###### 1. Use dicionário com gêneros como chaves                        ok (checked)
+###### 2. Cada gênero contém uma lista de jogos                         ok (checked)
+###### 3. Cada jogo é um dicionário com: título, ano, plataforma        ok (checked)
 ###### 4. Implemente funções para:
-######    - Adicionar jogo                                              ok
-######    - Listar jogos por plataforma                                 ok
-######    - Buscar jogos por título                                     iniciado
-######    - Mostrar estatísticas (total de jogos, jogos por gênero)     aguardando
+######    - Adicionar jogo                                              ok (need testing)
+######    - Listar jogos por plataforma                                 ok (need testing)
+######    - Buscar jogos por título                                     ok (need testing)
+######    - Mostrar estatísticas (total de jogos, jogos por gênero)     iniciado
 ######
 
 # database inicial de jogos
@@ -75,6 +75,8 @@ def f_buscar_jogo():
     print("\nResultados da busca:")
     for jogo in jogos_unicos:
         print(f"- {jogo['titulo]']} ({jogo['ano']}, {jogo['plataforma']})")
+
+# condição 4.4: estatísticas (total jogos e jogos por genero) e frontend
 
 ###################################
 ###### debugging ##################
