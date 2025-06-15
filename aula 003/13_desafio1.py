@@ -29,7 +29,7 @@ db_jogos = { # condição 1: dicionario
     }
 
 # condição 4.1: função adicionar jogo
-def add_jogo():
+def f_add_jogo():
     genero = input("Gênero do jogo: ").lower() # coleta dados (genero, titulo, plataforma, ano)
     titulo = input("Titulo: ")
     plataforma = input("Plataforma: ")
@@ -52,23 +52,24 @@ def add_jogo():
     print(f"Jogo '{titulo}' adicionado com sucesso no genero {genero}!")
 
 # condição 4.2: função listar jogos por plataforma
-#def listar_jogos():
+def f_listar_platf():
+    platf_unicas = set(jogo["plataforma"]
+                       for lista_jogos in db_jogos.values()
+                       for jogo in lista_jogos)
+    print(platf_unicas) # conceito está errado, preciso trabalhar a leitura dos dados coletados (não é possivel com set)
 
-########
-# debugging
-
-# Extrair TODAS as plataformas (incluindo repetições)
-list_platf = [jogo["plataforma"]
-              for lista_jogos in db_jogos.values()  # Itera nas listas de jogos
-              for jogo in lista_jogos]              # Itera nos jogos de cada lista
-
-print(list_platf)
-# Saída: ['PC', 'Mobile', 'PC', 'PC', 'Mobile', 'PC', 'Mobile']
+###################################
+###### debugging ##################
+###################################
 
 # Usando set() para valores únicos
 platf_unicas = set(jogo["plataforma"]
                    for lista_jogos in db_jogos.values()
                    for jogo in lista_jogos)
+print(platf_unicas) # Saída: {'PC', 'Mobile'}
 
-print(platf_unicas)
-# Saída: {'PC', 'Mobile'}
+# Extrair TODAS as plataformas (incluindo repetições)
+list_platf = [jogo["plataforma"]
+              for lista_jogos in db_jogos.values()  # Itera nas listas de jogos
+              for jogo in lista_jogos]              # Itera nos jogos de cada lista
+print(list_platf) # Saída: ['PC', 'Mobile', 'PC', 'PC', 'Mobile', 'PC', 'Mobile']
